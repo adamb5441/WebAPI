@@ -15,17 +15,17 @@ namespace WebAPI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapHttpRoute(
-             name: "swagger",
-             routeTemplate: "",
-             defaults: null,
-             constraints: null,
-             handler: new RedirectHandler((message => message.RequestUri.ToString()), "swagger"));
+            //routes.MapHttpRoute(
+            // name: "swagger",
+            // routeTemplate: "",
+            // defaults: null,
+            // constraints: null,
+            // handler: new RedirectHandler((message => message.RequestUri.ToString()), "swagger"));
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Swagger", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
